@@ -1,101 +1,349 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Phone,
+  Ticket,
+  UserCircle,
+  Mail,
+  Bell,
+  FileText,
+  List,
+  RefreshCw,
+  Send,
+  LucideProps,
+} from "lucide-react";
+import { ReactElement } from "react";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col min-h-screen">
+      <header className="px-4 lg:px-6 h-14 flex items-center">
+        <Link className="flex items-center justify-center" href="#">
+          <MobileClinicIcon className="h-6 w-6" />
+          <span className="sr-only">MediTravel</span>
+        </Link>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Features
+          </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
           >
-            Read our docs
-          </a>
-        </div>
+            How It Works
+          </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
+            Partners
+          </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
+            Contact
+          </Link>
+        </nav>
+      </header>
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1>Book Your Medical Journey with Ease</h1>
+                <p className="mx-auto max-w-[700px] md:text-xl">
+                  Be among the first to experience hassle-free medical travel
+                  booking. Join our waitlist for early access to our
+                  revolutionary app.
+                </p>
+              </div>
+              <div className="space-y-4 sm:space-x-4">
+                <Button size="lg">Join Waitlist</Button>
+                <Button size="lg" variant="outline">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+              Features
+            </h2>
+            <div className="grid gap-6 lg:grid-cols-3">
+              <FeatureCard
+                icon={<List className="h-10 w-10 mb-4 text-primary" />}
+                title="View Partner Clinics & Hotels"
+                description="Browse through our extensive list of partner clinics and hotels to find the perfect match for your needs."
+              />
+              <FeatureCard
+                icon={<Phone className="h-10 w-10 mb-4 text-primary" />}
+                title="Direct Contact"
+                description="Easily get in touch with hotels, clinics, or doctors directly through our app."
+              />
+              <FeatureCard
+                icon={<Ticket className="h-10 w-10 mb-4 text-primary" />}
+                title="Reservation Tickets"
+                description="Request and manage your reservation tickets all in one place."
+              />
+              <FeatureCard
+                icon={<UserCircle className="h-10 w-10 mb-4 text-primary" />}
+                title="User Profiles"
+                description="Create and manage your profile for a personalized experience."
+              />
+              <FeatureCard
+                icon={<Mail className="h-10 w-10 mb-4 text-primary" />}
+                title="Easy Login"
+                description="Login seamlessly using email magic links or OAuth."
+              />
+              <FeatureCard
+                icon={<Bell className="h-10 w-10 mb-4 text-primary" />}
+                title="Booking Notifications"
+                description="Receive instant notifications once your booking is confirmed."
+              />
+              <FeatureCard
+                icon={<FileText className="h-10 w-10 mb-4 text-primary" />}
+                title="Document Upload"
+                description="Securely upload and manage your medical documents and identification."
+              />
+              <FeatureCard
+                icon={<RefreshCw className="h-10 w-10 mb-4 text-primary" />}
+                title="Real-time Updates"
+                description="Get real-time updates on your booking status and payment reminders."
+              />
+              <FeatureCard
+                icon={<Send className="h-10 w-10 mb-4 text-primary" />}
+                title="Instant Communication"
+                description="Our team manages bookings and communicates with you directly for a smooth experience."
+              />
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+              How It Works
+            </h2>
+            <div className="grid gap-6 lg:grid-cols-3">
+              <Card>
+                <CardHeader>
+                  <CardTitle>1. Browse & Choose</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    Explore our partner clinics and hotels, and select the ones
+                    that best suit your needs.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>2. Book & Upload</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    Make your reservation and securely upload any necessary
+                    medical documents.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>3. Relax & Prepare</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    We&apos;ll handle the rest, including accommodation
+                    arrangements. Just prepare for your journey!
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+              App Preview
+            </h2>
+            <div className="flex justify-center items-center space-x-4">
+              <Image
+                src="/placeholder.svg?height=600&width=300"
+                alt="App mockup 1"
+                width={300}
+                height={600}
+                className="rounded-xl shadow-lg"
+              />
+              <Image
+                src="/placeholder.svg?height=600&width=300"
+                alt="App mockup 2"
+                width={300}
+                height={600}
+                className="rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+              Our Partners
+            </h2>
+            <div className="grid gap-6 lg:grid-cols-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Partner Clinics</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc pl-4 space-y-2">
+                    <li>MediCare Clinic</li>
+                    <li>HealthFirst Center</li>
+                    <li>Wellness Hub</li>
+                    <li>CureAll Hospital</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Partner Hotels</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc pl-4 space-y-2">
+                    <li>Comfort Inn</li>
+                    <li>Healing Retreat</li>
+                    <li>Serenity Suites</li>
+                    <li>RecoverWell Lodge</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+              What Our Customers Say
+            </h2>
+            <div className="grid gap-6 lg:grid-cols-3">
+              <TestimonialCard
+                quote="This app made my medical trip so much easier. Everything was taken care of!"
+                author="Sarah J."
+              />
+              <TestimonialCard
+                quote="I was amazed at how smooth the whole process was. Highly recommended!"
+                author="Michael T."
+              />
+              <TestimonialCard
+                quote="The peace of mind this service provides is priceless. Thank you!"
+                author="Emma R."
+              />
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-accent">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+                  Be the First to Experience Hassle-Free Medical Travel
+                </h2>
+                <p className="mx-auto max-w-[700px] md:text-xl ">
+                  Join our waitlist now and get early access to our
+                  revolutionary medical travel booking app.
+                </p>
+              </div>
+              <div className="space-x-4">
+                <Button>Join Waitlist</Button>
+                <Button variant="outline">Contact Us</Button>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p className="text-xs text-gray-500 dark:text-gray-400">
+          © 2024 MediTravel. All rights reserved.
+        </p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Terms of Service
+          </Link>
+          <Link
+            className="text-xs hover:underline underline-offset-4"
+            href="/privacy-policy"
+          >
+            Privacy Policy
+          </Link>
+        </nav>
       </footer>
     </div>
+  );
+}
+
+function FeatureCard({
+  icon,
+  title,
+  description,
+}: {
+  title: string;
+  icon: ReactElement<LucideProps & React.ComponentProps<"svg">>;
+  description: string;
+}) {
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex items-center justify-center">{icon}</div>
+        <CardTitle className="text-center">{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-center text-gray-500 dark:text-gray-400">
+          {description}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+
+function TestimonialCard({ quote, author }: { quote: string; author: string }) {
+  return (
+    <Card>
+      <CardContent className="pt-4">
+        <blockquote className="border-l-4 pl-4 italic">{quote}</blockquote>
+        <p className="mt-4 text-right font-semibold">- {author}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+function MobileClinicIcon(props: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 10v4a2 2 0 0 1-2 2h-1" />
+      <path d="M4 4v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2Z" />
+      <path d="M14 15v5" />
+      <path d="M10 15v5" />
+      <path d="M6 15v5" />
+      <path d="M2 14h20" />
+      <path d="M4 11V8" />
+      <path d="M20 11V8" />
+    </svg>
   );
 }
