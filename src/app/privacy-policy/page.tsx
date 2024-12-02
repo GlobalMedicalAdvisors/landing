@@ -2,14 +2,8 @@ import Link from "next/link";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
-        <Link className="flex items-center justify-center" href="/">
-          <MobileClinicIcon className="h-6 w-6" />
-          <span className="ml-2 text-lg font-semibold">MediTravel</span>
-        </Link>
-      </header>
-      <main className="flex-1 py-12 md:py-24 lg:py-32">
+    <div>
+      <main className="flex-1 py-12 md:py-8 lg:py-6">
         <div className="container px-4 md:px-6">
           <h1>Privacy Policy</h1>
           <div className="prose dark:prose-invert max-w-none">
@@ -84,31 +78,5 @@ export default function PrivacyPolicy() {
         </nav>
       </footer>
     </div>
-  );
-}
-
-function MobileClinicIcon(props: React.ComponentProps<"svg">) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 10v4a2 2 0 0 1-2 2h-1" />
-      <path d="M4 4v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2Z" />
-      <path d="M14 15v5" />
-      <path d="M10 15v5" />
-      <path d="M6 15v5" />
-      <path d="M2 14h20" />
-      <path d="M4 11V8" />
-      <path d="M20 11V8" />
-    </svg>
   );
 }
