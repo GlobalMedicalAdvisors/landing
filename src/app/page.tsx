@@ -33,9 +33,15 @@ export default function LandingPage() {
                   revolutionary app.
                 </p>
               </div>
-              <div className="space-y-4 sm:space-x-4">
-                <Button size="lg">Join Waitlist</Button>
-                <Button size="lg" variant="outline">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto">
+                  Join Waitlist
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto"
+                >
                   Learn More
                 </Button>
               </div>
