@@ -15,42 +15,12 @@ import {
   LucideProps,
 } from "lucide-react";
 import { ReactElement } from "react";
+import { Navbar } from "@/components/navbar";
 
 export default function LandingPage() {
   return (
     <div>
-      <header className="px-4 lg:px-6 max-h-20 flex items-center">
-        <Link className="flex items-center justify-center" href="#">
-          <Image
-            src="/logo.jpeg"
-            alt="GMA Logo"
-            width={70}
-            height={70}
-            className="mix-blend-multiply"
-          />
-          <span className="sr-only">MediTravel</span>
-        </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#features"
-          >
-            Features
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#how-it-works"
-          >
-            How It Works
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#partners"
-          >
-            Partners
-          </Link>
-        </nav>
-      </header>
+      <Navbar />
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
