@@ -33,27 +33,21 @@ export default function LandingPage() {
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
+            href="#features"
           >
             Features
           </Link>
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
+            href="#how-it-works"
           >
             How It Works
           </Link>
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
+            href="#partners"
           >
             Partners
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Contact
           </Link>
         </nav>
       </header>
@@ -80,7 +74,10 @@ export default function LandingPage() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+            <h2
+              id="features"
+              className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl"
+            >
               Features
             </h2>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -134,7 +131,10 @@ export default function LandingPage() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+            <h2
+              id="how-it-works"
+              className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl"
+            >
               How It Works
             </h2>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -197,9 +197,12 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-24 lg:py-32 ">
           <div className="container px-4 md:px-6">
-            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
+            <h2
+              id="partners"
+              className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl"
+            >
               Our Partners
             </h2>
             <div className="grid gap-6 lg:grid-cols-2 justify-items-center relative mix-blend-multiply">
