@@ -203,20 +203,32 @@ export default function LandingPage() {
               Our Partners
             </h2>
             <div className="grid gap-6 lg:grid-cols-2 justify-items-center relative mix-blend-multiply">
-              <Image
-                className="hover:opacity-70 transition-all duration-300"
-                alt="Doctor Smile"
-                src="/doctor-smile.png"
-                width={250}
-                height={250}
-              />
-              <Image
-                className="hover:opacity-70 transition-all duration-300"
-                alt="Doctor Smile"
-                src="/panorama-clinics.jpg"
-                width={250}
-                height={250}
-              />
+              <Link
+                href="https://www.instagram.com/drsmileclinic/"
+                target="_blank"
+                title="Go to Doctor Smile's Instagram"
+              >
+                <Image
+                  className="hover:opacity-70 transition-all duration-300"
+                  alt="Doctor Smile"
+                  src="/doctor-smile.png"
+                  width={250}
+                  height={250}
+                />
+              </Link>
+              <Link
+                href="https://www.instagram.com/panorama.clinics"
+                target="_blank"
+                title="Go to Panorama Clinics' Instagram"
+              >
+                <Image
+                  className="hover:opacity-70 transition-all duration-300"
+                  alt="Doctor Smile"
+                  src="/panorama-clinics.jpg"
+                  width={250}
+                  height={250}
+                />
+              </Link>
             </div>
           </div>
         </section>
