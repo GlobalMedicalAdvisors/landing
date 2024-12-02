@@ -1,3 +1,4 @@
+import { NAVLINKS } from "@/config/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -27,24 +28,11 @@ export const Navbar = () => {
         <span className="sr-only">MediTravel</span>
       </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6">
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4"
-          href="#features"
-        >
-          Features
-        </Link>
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4"
-          href="#how-it-works"
-        >
-          How It Works
-        </Link>
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4"
-          href="#partners"
-        >
-          Partners
-        </Link>
+        {NAVLINKS.map((link) => (
+          <NavLink key={link.url} href={link.url}>
+            {link.label}
+          </NavLink>
+        ))}
       </nav>
     </header>
   );
