@@ -6,7 +6,6 @@ import {
   Phone,
   Ticket,
   UserCircle,
-  Mail,
   Bell,
   FileText,
   List,
@@ -204,6 +203,9 @@ export default function LandingPage() {
                 />
               </Link>
             </div>
+            <p className="text-center text-xl font-medium">
+              more to come soon!
+            </p>
           </div>
         </section>
         {/* TBD: Testimonial */}
