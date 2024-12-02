@@ -18,7 +18,7 @@ import { ReactElement } from "react";
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div>
       <header className="px-4 lg:px-6 max-h-20 flex items-center">
         <Link className="flex items-center justify-center" href="#">
           <Image

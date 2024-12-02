@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${montserrat.className} antialiased container mx-auto`}>
+      <body
+        className={`${montserrat.className} antialiased container mx-auto flex flex-col min-h-screen`}
+      >
         {children}
       </body>
     </html>
