@@ -179,7 +179,7 @@ export default function LandingPage() {
             >
               Our Partners
             </h2>
-            <div className="grid gap-6 lg:grid-cols-2 justify-items-center relative mix-blend-multiply">
+            <div className="grid gap-6 lg:grid-cols-2 justify-items-center">
               <Link
                 href="https://www.instagram.com/drsmileclinic/"
                 target="_blank"
@@ -201,7 +201,7 @@ export default function LandingPage() {
                 <Image
                   className="hover:opacity-70 transition-all duration-300"
                   alt="Doctor Smile"
-                  src="/panorama-clinics.jpg"
+                  src="/panorama-clinics.png"
                   width={250}
                   height={250}
                 />
