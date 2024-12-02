@@ -1,6 +1,7 @@
 "use client";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LucideProps } from "lucide-react";
+import { MagicCard } from "./ui/magic-card";
 export function FeatureCard({
   icon,
   title,
@@ -11,7 +12,7 @@ export function FeatureCard({
   description: string;
 }) {
   return (
-    <Card>
+    <MagicCard>
       <CardHeader>
         <div className="flex items-center justify-center">{icon}</div>
         <CardTitle className="text-center">{title}</CardTitle>
@@ -21,6 +22,6 @@ export function FeatureCard({
           {description}
         </p>
       </CardContent>
-    </Card>
+    </MagicCard>
   );
 }
