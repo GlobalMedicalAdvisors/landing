@@ -2,6 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+const NavLink = ({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) => {
+  return (
+    <Link
+      href={href}
+      className="text-sm font-medium hover:underline underline-offset-4"
+    >
+      {children}
+    </Link>
+  );
+};
+
 export const Navbar = () => {
   return (
     <header className="px-4 lg:px-6 max-h-20 flex items-center">
