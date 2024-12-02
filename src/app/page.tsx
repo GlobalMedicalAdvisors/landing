@@ -19,9 +19,15 @@ import { ReactElement } from "react";
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
+      <header className="px-4 lg:px-6 max-h-20 flex items-center">
         <Link className="flex items-center justify-center" href="#">
-          <MobileClinicIcon className="h-6 w-6" />
+          <Image
+            src="/logo.jpeg"
+            alt="GMA Logo"
+            width={70}
+            height={70}
+            className="mix-blend-multiply"
+          />
           <span className="sr-only">MediTravel</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
