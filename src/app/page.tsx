@@ -196,37 +196,26 @@ export default function LandingPage() {
             <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
               Our Partners
             </h2>
-            <div className="grid gap-6 lg:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Partner Clinics</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc pl-4 space-y-2">
-                    <li>MediCare Clinic</li>
-                    <li>HealthFirst Center</li>
-                    <li>Wellness Hub</li>
-                    <li>CureAll Hospital</li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Partner Hotels</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc pl-4 space-y-2">
-                    <li>Comfort Inn</li>
-                    <li>Healing Retreat</li>
-                    <li>Serenity Suites</li>
-                    <li>RecoverWell Lodge</li>
-                  </ul>
-                </CardContent>
-              </Card>
+            <div className="grid gap-6 lg:grid-cols-2 justify-items-center relative mix-blend-multiply">
+              <Image
+                className="hover:opacity-70 transition-all duration-300"
+                alt="Doctor Smile"
+                src="/doctor-smile.png"
+                width={250}
+                height={250}
+              />
+              <Image
+                className="hover:opacity-70 transition-all duration-300"
+                alt="Doctor Smile"
+                src="/panorama-clinics.jpg"
+                width={250}
+                height={250}
+              />
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        {/* TBD: Testimonial */}
+        {/* <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
               What Our Customers Say
@@ -246,7 +235,7 @@ export default function LandingPage() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-accent">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
@@ -254,7 +243,7 @@ export default function LandingPage() {
                 <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
                   Be the First to Experience Hassle-Free Medical Travel
                 </h2>
-                <p className="mx-auto max-w-[700px] md:text-xl ">
+                <p className="mx-auto max-w-[700px] md:text-xl">
                   Join our waitlist now and get early access to our
                   revolutionary medical travel booking app.
                 </p>
@@ -267,6 +256,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
+
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-gray-500 dark:text-gray-400">
           © 2024 MediTravel. All rights reserved.
@@ -311,6 +301,7 @@ function FeatureCard({
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function TestimonialCard({ quote, author }: { quote: string; author: string }) {
   return (
     <Card>
