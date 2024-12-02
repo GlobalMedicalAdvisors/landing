@@ -12,10 +12,9 @@ import {
   List,
   RefreshCw,
   Send,
-  LucideProps,
 } from "lucide-react";
-import { ReactElement } from "react";
 import { Navbar } from "@/components/navbar";
+import { FeatureCard } from "@/components/feature-card";
 
 export default function LandingPage() {
   return (
@@ -77,11 +76,7 @@ export default function LandingPage() {
                 title="User Profiles"
                 description="Create and manage your profile for a personalized experience."
               />
-              <FeatureCard
-                icon={<Mail className="h-10 w-10 mb-4 text-primary" />}
-                title="Easy Login"
-                description="Login seamlessly using email magic links or OAuth."
-              />
+
               <FeatureCard
                 icon={<Bell className="h-10 w-10 mb-4 text-primary" />}
                 title="Booking Notifications"
@@ -271,30 +266,6 @@ export default function LandingPage() {
         </nav>
       </footer>
     </div>
-  );
-}
-
-function FeatureCard({
-  icon,
-  title,
-  description,
-}: {
-  title: string;
-  icon: ReactElement<LucideProps & React.ComponentProps<"svg">>;
-  description: string;
-}) {
-  return (
-    <Card>
-      <CardHeader>
-        <div className="flex items-center justify-center">{icon}</div>
-        <CardTitle className="text-center">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-center text-gray-500 dark:text-gray-400">
-          {description}
-        </p>
-      </CardContent>
-    </Card>
   );
 }
 
