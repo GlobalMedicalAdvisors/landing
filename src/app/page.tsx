@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { FeatureCard } from "@/components/feature-card";
+import { Badge } from "@/components/ui/badge";
 
 export default function LandingPage() {
   return (
@@ -25,6 +26,9 @@ export default function LandingPage() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1>Book Your Medical Journey with Ease</h1>
+                <Badge variant={"outline"} className="bg-primary/45">
+                  Coming Soon
+                </Badge>
                 <p className="mx-auto max-w-[700px] md:text-xl">
                   Be among the first to experience hassle-free medical travel
                   booking. Join our waitlist for early access to our
