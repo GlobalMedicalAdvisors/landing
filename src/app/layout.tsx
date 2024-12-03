@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/providers/theme-provider";
 import BlurFade from "@/components/ui/blur-fade";
+import { Toaster } from "@/components/ui/toaster";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
           <Navbar />
         </ThemeProvider>
         <BlurFade inView>{children}</BlurFade>
+        <Toaster />
       </body>
     </html>
   );

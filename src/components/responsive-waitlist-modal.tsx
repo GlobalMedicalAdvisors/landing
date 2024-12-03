@@ -33,7 +33,9 @@ import {
 
 import { PhoneInput } from "./phone-input";
 import { useMediaQuery } from "usehooks-ts";
+import { useFormspark } from "@formspark/use-formspark";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 const formSchema = z.object({
   phone: z.string().refine(
     (value) => {
@@ -48,10 +50,19 @@ type WaitlistFormProps = {
   classNames?: string;
 };
 const WaitlistForm = ({ classNames }: WaitlistFormProps) => {
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  const [submit, submitting] = useFormspark({
+    formId: process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID!,
+  });
+  const { toast } = useToast();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    await submit({ phoneNumber: values.phone })
+      .then(() => form.reset())
+      .then(() =>
+        toast({
+          title: "Congratulations!",
+          description: "You're now on the waitlist!",
+        })
+      );
   }
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -69,14 +80,16 @@ const WaitlistForm = ({ classNames }: WaitlistFormProps) => {
             <FormItem>
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <PhoneInput {...field} />
+                <PhoneInput placeholder="Enter your phone number" {...field} />
               </FormControl>
 
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button disabled={submitting} type="submit">
+          Submit
+        </Button>
       </form>
     </Form>
   );
