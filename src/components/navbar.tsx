@@ -3,7 +3,7 @@ import { NAVLINKS } from "@/config/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { MobileDrawer } from "./mobile-drawer";
+
 import { usePathname } from "next/navigation";
 
 const NavLink = ({
@@ -42,9 +42,6 @@ export const Navbar = () => {
               </NavLink>
             ))}
           </nav>
-          <div className="sm:hidden">
-            <MobileDrawer />
-          </div>
         </>
       )}
     </header>
