@@ -28,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${montserrat.className} antialiased container mx-auto flex flex-col min-h-screen`}
       >
         <ThemeProvider attribute="class" defaultTheme="system">

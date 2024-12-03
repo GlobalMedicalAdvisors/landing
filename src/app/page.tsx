@@ -42,13 +42,6 @@ export default function LandingPage() {
                     Join Waitlist
                   </Button>
                 </ResponsiveWaitlistModal>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto"
-                >
-                  Learn More
-                </Button>
               </div>
               <div>
                 <Iphone15Pro className="max-w-sm" src="/mockup.jpg" />
@@ -221,7 +214,6 @@ export default function LandingPage() {
               </div>
               <div className="space-x-4">
                 <Button>Join Waitlist</Button>
-                <Button variant="outline">Contact Us</Button>
               </div>
             </div>
           </div>
