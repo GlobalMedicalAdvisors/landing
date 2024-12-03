@@ -47,7 +47,9 @@ export default function LandingPage() {
                   Learn More
                 </Button>
               </div>
-              <Iphone15Pro src="/mockup.jpg" />
+              <div>
+                <Iphone15Pro src="/mockup.jpg" />
+              </div>
             </div>
           </div>
         </section>
@@ -149,29 +151,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-center mb-8 sm:text-4xl md:text-5xl text-3xl">
-              App Preview
-            </h2>
-            <div className="flex justify-center items-center space-x-4">
-              <Image
-                src="/placeholder.svg?height=600&width=300"
-                alt="App mockup 1"
-                width={300}
-                height={600}
-                className="rounded-xl shadow-lg"
-              />
-              <Image
-                src="/placeholder.svg?height=600&width=300"
-                alt="App mockup 2"
-                width={300}
-                height={600}
-                className="rounded-xl shadow-lg"
-              />
-            </div>
-          </div>
-        </section>
+
         <section className="w-full py-12 md:py-24 lg:py-32 ">
           <div className="container px-4 md:px-6">
             <h2
@@ -258,7 +238,7 @@ export default function LandingPage() {
 
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-gray-500 dark:text-gray-400">
-          © 2024 MediTravel. All rights reserved.
+          Powered by ELCC © copyright 2024
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">

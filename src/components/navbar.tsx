@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./mode-toggle";
 
 const NavLink = ({
   children,
@@ -44,6 +45,7 @@ export const Navbar = () => {
           </nav>
         </>
       )}
+      <ModeToggle />
     </header>
   );
 };

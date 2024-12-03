@@ -12,7 +12,7 @@ export function FeatureCard({
   description: string;
 }) {
   return (
-    <MagicCard>
+    <MagicCard gradientColor={"#a3d9ff"}>
       <CardHeader>
         <div className="flex items-center justify-center">{icon}</div>
         <CardTitle className="text-center">{title}</CardTitle>

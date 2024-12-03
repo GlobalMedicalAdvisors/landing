@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -24,12 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${montserrat.className} antialiased container mx-auto flex flex-col min-h-screen`}
       >
-        <Navbar />
-
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <Navbar />
+        </ThemeProvider>
         {children}
       </body>
     </html>
