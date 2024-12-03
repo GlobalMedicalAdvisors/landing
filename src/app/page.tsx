@@ -181,7 +181,7 @@ export default function LandingPage() {
               >
                 <Image
                   className="hover:opacity-70 transition-all duration-300"
-                  alt="Doctor Smile"
+                  alt="Panorama Clinics"
                   src="/panorama-clinics.png"
                   width={250}
                   height={250}
