@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { FeatureCard } from "@/components/feature-card";
 import { Badge } from "@/components/ui/badge";
+import Iphone15Pro from "@/components/ui/iphone-15-pro";
 
 export default function LandingPage() {
   return (
@@ -33,6 +34,7 @@ export default function LandingPage() {
                   revolutionary app.
                 </p>
               </div>
+
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <Button size="lg" className="w-full sm:w-auto">
                   Join Waitlist
@@ -45,6 +47,7 @@ export default function LandingPage() {
                   Learn More
                 </Button>
               </div>
+              <Iphone15Pro src="/mockup.jpg" />
             </div>
           </div>
         </section>
