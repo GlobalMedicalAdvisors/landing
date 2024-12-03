@@ -1,3 +1,4 @@
+"use client";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,7 +12,16 @@ import {
   FormMessage,
 } from "./ui/form";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { PhoneInput } from "./phone-input";
+
 const formSchema = z.object({
   phone: z.string().refine(
     (value) => {
@@ -22,7 +32,7 @@ const formSchema = z.object({
   ),
 });
 
-export const WaitlistForm = () => {
+const WaitlistForm = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
@@ -40,9 +50,9 @@ export const WaitlistForm = () => {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input type="number" placeholder="(+1) 234567890" {...field} />
+                <PhoneInput {...field} />
               </FormControl>
 
               <FormMessage />
@@ -52,5 +62,24 @@ export const WaitlistForm = () => {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
+  );
+};
+
+export const ResponsiveWaitlistModal = ({
+  children,
+}: React.PropsWithChildren) => {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Join our waitlist</DialogTitle>
+          <DialogDescription>
+            Be among the first to receive updates about our upcoming mobile app.
+          </DialogDescription>
+        </DialogHeader>
+        <WaitlistForm />
+      </DialogContent>
+    </Dialog>
   );
 };

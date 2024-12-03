@@ -15,6 +15,7 @@ import {
 import { FeatureCard } from "@/components/feature-card";
 import { Badge } from "@/components/ui/badge";
 import Iphone15Pro from "@/components/ui/iphone-15-pro";
+import { ResponsiveWaitlistModal } from "@/components/responsive-waitlist-modal";
 
 export default function LandingPage() {
   return (
@@ -36,9 +37,11 @@ export default function LandingPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto">
-                  Join Waitlist
-                </Button>
+                <ResponsiveWaitlistModal>
+                  <Button size="lg" className="w-full sm:w-auto">
+                    Join Waitlist
+                  </Button>
+                </ResponsiveWaitlistModal>
                 <Button
                   size="lg"
                   variant="outline"
