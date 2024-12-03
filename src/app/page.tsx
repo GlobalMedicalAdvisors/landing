@@ -20,7 +20,7 @@ export default function LandingPage() {
   return (
     <div>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        <section className="w-full py-12 md:py-8 lg:py-6">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
@@ -48,7 +48,7 @@ export default function LandingPage() {
                 </Button>
               </div>
               <div>
-                <Iphone15Pro src="/mockup.jpg" />
+                <Iphone15Pro className="max-w-sm" src="/mockup.jpg" />
               </div>
             </div>
           </div>
