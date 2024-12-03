@@ -14,6 +14,7 @@ export default function Iphone15Pro({
 }: Iphone15ProProps) {
   return (
     <svg
+      className="mt-8"
       width={width}
       height={height}
       viewBox={`0 0 ${width} ${height}`}
