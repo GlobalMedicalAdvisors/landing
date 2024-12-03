@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/providers/theme-provider";
+import BlurFade from "@/components/ui/blur-fade";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -32,7 +33,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system">
           <Navbar />
         </ThemeProvider>
-        {children}
+        <BlurFade inView>{children}</BlurFade>
       </body>
     </html>
   );
